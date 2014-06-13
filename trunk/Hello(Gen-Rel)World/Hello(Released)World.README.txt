@@ -1,0 +1,26 @@
+Hello (Released) World, Version: 1.0
+
+Installation & Configuration
+============================
+
+-  Unzip the downloaded plugin anywhere you like (and remember its location for step 4).
+-  Open Lightroom's Plugin Manager (on the File Menu).
+-  Click the 'Add' Button (lower left).
+-  Select the plugin's lrplugin folder (in the folder where the plugin was unzipped in step 1).
+-  Click 'OK'.
+-  If a dialog box appears that says "Your catalog must be updated...", click 'Update Catalog'.
+-  Review the information presented by the plugin manager, and edit settings if necessary or desirable.
+-  Click 'Done'.
+
+
+To Unintall
+===========
+
+-  Open Lightroom's Plugin Manager (on the File Menu).
+-  Select the plugin you want to uninstall.
+-  Click the 'Remove' Button (lower left).
+
+
+See http://www.robcole.com/Rob/ProductsAndServices/HelloWorldLrPlugin for more information.
+
+Rob Cole    www.robcole.com

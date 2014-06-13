@@ -1,0 +1,57 @@
+All luadoc for the sources is in the luadoc folder - you can download the zips via svn, or view online by double clicking index.html AND clicking 'View as Web Page' in the upper right corner when it shows you the html source.
+
+Suggested guidelines for maintaining luadoc in framework:
+
+- whatever follows '---' will be taken as the primary description and start of function doc, thus @description may be omitted.
+
+- Primary description should be kept short (preferrably one line), since it appears in the quick-reference function table at top of module's luadoc.
+  Consider not wrapping it in <p> tags since that results in extra space in the quick-ref table, instead
+  use <br> if multiple lines are esential for primary description.
+
+- Use secondary description paragraphs for things like:
+  - background
+  - motivation for creation
+  - implementation algorithm
+  - alternative algorithms rejected
+  - to-do
+  i.e. things that, while pertinent in some respects, are not as critical to remember when using as @usage clauses, which are highlighted for emphasis.
+  (secondary description paragraphs will be indented slightly.)
+
+  Note: there is only one description - there can not be multiple descriptions by using multiple @description tags.
+
+- @param - If parameter is a multi-element table, then use paragraphs, block-quotes, and list items to structure, so each table element begins on a separate line...
+  - Consider supplying type(s) and whether parameter is optional or required - like in Lightroom API doc.
+
+- @usage - important notes and warnings that must be heeded in order for function to be used successfully.
+  - consider not wrapping first line/paragraph in <p> tags, since <p> tags creates a lot of space around the usage clause.
+    But use paragraphs, block quotes, and or list items to structure subsequent content if appropriate...
+
+- @return - Consider using one @return tag per value returned, that way they appear in a numbered list and make it clear that function returns more than one value, like:
+  
+      Return values:
+          1. status - boolean: true iff successful.
+          2. errorMessage - string: only present if status unsuccesful.
+
+  instead of:
+
+      Return value:
+          true, nil if successful; false, error message if not.
+
+  Consider giving return values a name (at least in some circumstances, especically multiple return values), and a type.
+  While not required by luadoc, it sometimes helps...
+  e.g. Adobe types all their return values, although they are not named.
+  Personally, I find naming the return values to be helpful when there are multiple return values, kinda like using named elements
+  in a table when there are multiple function parameters instead of having to identify by numeric position.
+
+  Consider omitting '@return nil' if the function does not return anything.
+
+- Consider ordering elements in source doc in same order they appear in target doc, namely:
+
+    - Description
+    - Parameters
+    - Usages
+    - Returns
+
+  Just seems to be less chaotic if ordering is consistent and same in source code as target doc.
+
+- Consider putting a blank comment between tag blocks, and one above the function statement - for readability.
